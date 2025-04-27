@@ -33,14 +33,10 @@ let computerScore = 0;
 // Print/console.log the results
 // Increment the score for winner
 
-const humanChoice = getHumanChoice();
-const computerChoice = getComputerChoice();
-
 function playRound(humanChoice, computerChoice) {
   let lowerCasedHumanChoice = humanChoice.toLowerCase();
-  console.log(`computer choice: ${computerChoice}`);
   if (lowerCasedHumanChoice === computerChoice) {
-    console.log('draw');
+    console.log('Draw');
   } else if (lowerCasedHumanChoice === 'rock') {
     if (computerChoice === 'paper') {
       computerScore++;
@@ -68,4 +64,26 @@ function playRound(humanChoice, computerChoice) {
   }
 }
 
-playRound(humanChoice,computerChoice)
+// Create a function that run playRound(..) 5 rounds
+// Use FOR loop to run playRound() 5 times
+// Get human and computer choices
+// After FOR loop ends, check if human score === computer score then alert draw
+// Else if human score is >= computer score then alert human wins
+// Else alert computer wins
+
+function playGame() {
+  for (i=0;i<5;i++) {
+    let humanChoice = getHumanChoice();
+    let computerChoice = getComputerChoice();
+    playRound(humanChoice,computerChoice);
+  }
+  if (humanScore === computerScore) {
+    alert(`${humanScore}:${computerScore} - Draw!`);
+  } else if (humanScore >= computerScore) {
+    alert(`${humanScore}:${computerScore} - You Win!`);
+  } else {
+    alert(`${humanScore}:${computerScore} - You Lose!`);
+  } 
+}
+
+playGame();
