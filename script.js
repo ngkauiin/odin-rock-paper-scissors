@@ -24,8 +24,6 @@ function getHumanChoice() {
 let humanScore = 0;
 let computerScore = 0;
 
-
-
 // Get human choice and computer choice
 // Create a function to use human choice and computer choice as parameters
 // Make human choice lowercase
@@ -33,7 +31,7 @@ let computerScore = 0;
 // Else if human choice is 'rock' && computer choice is 'paper' then computer wins
 // Else human wins
 // Print/console.log the results
-// Alert the result such as 'You win! Rock beats scissor'
+// Increment the score for winner
 
 const humanChoice = getHumanChoice();
 const computerChoice = getComputerChoice();
@@ -44,11 +42,29 @@ function playRound(humanChoice, computerChoice) {
   if (lowerCasedHumanChoice === computerChoice) {
     console.log('draw');
   } else if (lowerCasedHumanChoice === 'rock') {
-    computerChoice === 'paper' ? console.log('You lose! Paper beats Rock') : console.log('You win! Rock beats Scissor')
+    if (computerChoice === 'paper') {
+      computerScore++;
+      console.log('You lose! Paper beats Rock');
+    } else {
+      humanScore++;
+      console.log('You win! Rock beats Scissor');
+    }
   } else if (lowerCasedHumanChoice === 'paper') {
-    computerChoice === 'scissor' ? console.log('You lose! Scissor beats Paper') : console.log('You win! Paper beats Rock')
+    if (computerChoice === 'scissor') {
+      computerScore++;
+      console.log('You lose! Scissor beats Paper');
+    } else {
+      humanScore++;
+      console.log('You win! Paper beats Rock');
+    }
   } else if (lowerCasedHumanChoice === 'scissor') {
-    computerChoice === 'rock' ? console.log('You lose! Rock beats Scissor') : console.log('You win! Scissor beats Paper')
+    if (computerChoice === 'rock') {
+      computerScore++;
+      console.log('You lose! Rock beats Scissor');
+    } else {
+      humanScore++;
+      console.log('You win! Scissor beats Paper');
+    }
   }
 }
 
