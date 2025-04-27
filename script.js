@@ -16,3 +16,9 @@ function getComputerChoice() {
 }
 
 console.log(getComputerChoice())
+
+function getHumanChoice() {
+  // Use prompt to get human input (assume always valid)
+  // return and console.log the result
+  return prompt("Rock, paper or scissors?")
+}
