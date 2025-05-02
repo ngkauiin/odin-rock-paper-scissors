@@ -66,4 +66,9 @@ function playGame() {
   } 
 }
 
-// playGame();
+function printResult(message) {
+  const li = document.createElement('li');
+  const ul = document.querySelector('ul.result-board');
+  li.textContent = message;
+  ul.appendChild(li);
+};
