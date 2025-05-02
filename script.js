@@ -52,7 +52,7 @@ function playRound(humanChoice, computerChoice) {
 const btns = document.querySelectorAll('button');
 btns.forEach((btn)=> {
   btn.addEventListener("click", ()=>{
-    console.log(btn.className);
+    playRound(btn.className,getComputerChoice());
   })
 })
 
