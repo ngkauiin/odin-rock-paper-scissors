@@ -77,6 +77,7 @@ function playGame() {
     let computerChoice = getComputerChoice();
     playRound(humanChoice,computerChoice);
   }
+  
   if (humanScore === computerScore) {
     alert(`${humanScore}:${computerScore} - Draw!`);
   } else if (humanScore >= computerScore) {
