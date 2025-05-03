@@ -19,7 +19,6 @@ let humanScore = 0;
 let computerScore = 0;
 
 function playRound(humanChoice, computerChoice) {
-  // if (humanScore === 5 || computerScore === 5) resetScore();
 
   let lowerCasedHumanChoice = humanChoice.toLowerCase();
   if (lowerCasedHumanChoice === computerChoice) {
@@ -82,6 +81,7 @@ function announceWinner(msg) {
   const announcement = document.createTextNode(` — ${msg}`);
   const resultBoardTitle = document.querySelector('.result-board-title');
   resultBoardTitle.appendChild(announcement);
+  resetBtn.disabled = false;
 }
 
 const resetBtn = document.querySelector('.reset');
@@ -100,6 +100,7 @@ function resetScore() {
   for (let i = 0; i < ulChildrenLength; i++) {
     ul.removeChild(ul.firstElementChild);
   }
+  resetBtn.disabled = true;
 }
 
 function removeAnnouncement() {
