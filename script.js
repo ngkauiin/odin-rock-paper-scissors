@@ -92,7 +92,14 @@ resetBtn.addEventListener('click', () => {
 function resetScore() {
   humanScore = 0;
   computerScore = 0;
+  printScore();
   removeAnnouncement();
+
+  const ul = document.querySelector('ul.result-board');
+  const ulChildrenLength = ul.children.length;
+  for (let i = 0; i < ulChildrenLength; i++) {
+    ul.removeChild(ul.firstElementChild);
+  }
 }
 
 function removeAnnouncement() {
