@@ -21,30 +21,30 @@ let computerScore = 0;
 function playRound(humanChoice, computerChoice) {
   let lowerCasedHumanChoice = humanChoice.toLowerCase();
   if (lowerCasedHumanChoice === computerChoice) {
-    console.log('Draw');
+    printResult('Draw');
   } else if (lowerCasedHumanChoice === 'rock') {
     if (computerChoice === 'paper') {
       computerScore++;
-      console.log('You lose! Paper beats Rock');
+      printResult('You lose! Paper beats Rock');
     } else {
       humanScore++;
-      console.log('You win! Rock beats Scissor');
+      printResult('You win! Rock beats Scissor');
     }
   } else if (lowerCasedHumanChoice === 'paper') {
     if (computerChoice === 'scissor') {
       computerScore++;
-      console.log('You lose! Scissor beats Paper');
+      printResult('You lose! Scissor beats Paper');
     } else {
       humanScore++;
-      console.log('You win! Paper beats Rock');
+      printResult('You win! Paper beats Rock');
     }
   } else if (lowerCasedHumanChoice === 'scissor') {
     if (computerChoice === 'rock') {
       computerScore++;
-      console.log('You lose! Rock beats Scissor');
+      printResult('You lose! Rock beats Scissor');
     } else {
       humanScore++;
-      console.log('You win! Scissor beats Paper');
+      printResult('You win! Scissor beats Paper');
     }
   }
 }
