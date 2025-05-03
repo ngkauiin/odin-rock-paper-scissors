@@ -69,7 +69,7 @@ function checkScore() {
 
 function printScore() {
   const scoreBoardDiv = document.querySelector('.score-board');
-  scoreBoardDiv.textContent = `${humanScore} : ${computerScore}`;
+  scoreBoardDiv.textContent = `Human ${humanScore} - ${computerScore} Computer`;
 }
 
 function announceWinner(msg) {
