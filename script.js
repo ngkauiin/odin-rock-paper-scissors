@@ -26,25 +26,31 @@ function playRound(humanChoice, computerChoice) {
     if (computerChoice === 'paper') {
       computerScore++;
       printResult('You lose! Paper beats Rock');
+      checkScore();
     } else {
       humanScore++;
       printResult('You win! Rock beats Scissor');
+      checkScore();
     }
   } else if (lowerCasedHumanChoice === 'paper') {
     if (computerChoice === 'scissor') {
       computerScore++;
       printResult('You lose! Scissor beats Paper');
+      checkScore();
     } else {
       humanScore++;
       printResult('You win! Paper beats Rock');
+      checkScore();
     }
   } else if (lowerCasedHumanChoice === 'scissor') {
     if (computerChoice === 'rock') {
       computerScore++;
       printResult('You lose! Rock beats Scissor');
+      checkScore();
     } else {
       humanScore++;
       printResult('You win! Scissor beats Paper');
+      checkScore();
     }
   }
 }
@@ -56,14 +62,18 @@ btns.forEach((btn)=> {
   })
 })
 
-function playGame() {
-  if (humanScore === computerScore) {
-    alert(`${humanScore}:${computerScore} - Draw!`);
-  } else if (humanScore >= computerScore) {
-    alert(`${humanScore}:${computerScore} - You Win!`);
-  } else {
-    alert(`${humanScore}:${computerScore} - You Lose!`);
-  } 
+function checkScore() {
+  if (humanScore === 5) {
+    announceWinner('Human Wins!')
+  } else if (computerScore === 5) {
+    announceWinner('Computer Wins!');
+  }
+}
+
+function announceWinner(msg) {
+  const announcement = document.createTextNode(` — ${msg}`);
+  const resultBoardTitle = document.querySelector('.result-board-title');
+  resultBoardTitle.appendChild(announcement);
 }
 
 function printResult(message) {
