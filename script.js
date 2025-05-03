@@ -1,5 +1,3 @@
-console.log("hello world")
-
 function getComputerChoice() {
   let randomNumber = Math.random()
   if (randomNumber <= 1/3) {
@@ -11,12 +9,9 @@ function getComputerChoice() {
   }
 }
 
-function getHumanChoice() {
-  return prompt("Rock, paper or scissors?")
-}
-
 let humanScore = 0;
 let computerScore = 0;
+printScore();
 
 function playRound(humanChoice, computerChoice) {
 
@@ -115,5 +110,6 @@ function printResult(message) {
   const ul = document.querySelector('ul.result-board');
   li.textContent = message;
   ul.appendChild(li);
+  ul.scrollTop = ul.scrollHeight;
 };
 
