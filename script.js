@@ -19,6 +19,8 @@ let humanScore = 0;
 let computerScore = 0;
 
 function playRound(humanChoice, computerChoice) {
+  // if (humanScore === 5 || computerScore === 5) resetScore();
+
   let lowerCasedHumanChoice = humanChoice.toLowerCase();
   if (lowerCasedHumanChoice === computerChoice) {
     printResult('Draw');
@@ -56,7 +58,7 @@ function playRound(humanChoice, computerChoice) {
   printScore();
 }
 
-const btns = document.querySelectorAll('button');
+const btns = document.querySelectorAll('.rps-buttons button');
 btns.forEach((btn)=> {
   btn.addEventListener("click", ()=>{
     playRound(btn.className,getComputerChoice());
@@ -82,9 +84,26 @@ function announceWinner(msg) {
   resultBoardTitle.appendChild(announcement);
 }
 
+const resetBtn = document.querySelector('.reset');
+resetBtn.addEventListener('click', () => {
+  resetScore();
+});
+
+function resetScore() {
+  humanScore = 0;
+  computerScore = 0;
+  removeAnnouncement();
+}
+
+function removeAnnouncement() {
+  const resultBoardTitle = document.querySelector('.result-board-title');
+  resultBoardTitle.textContent = 'Result Board';
+}
+
 function printResult(message) {
   const li = document.createElement('li');
   const ul = document.querySelector('ul.result-board');
   li.textContent = message;
   ul.appendChild(li);
 };
+
