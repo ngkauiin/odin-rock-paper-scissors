@@ -21,13 +21,12 @@ body {
 
 .rps-buttons {
   display: flex;
-  justify-content: center;
 }
 
 .rock,
 .paper,
 .scissor {
-  flex: 1 0 auto;
+  flex: 1;
 }
 
 .result-board-container {
