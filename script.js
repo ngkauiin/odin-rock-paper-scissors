@@ -82,6 +82,7 @@ function announceWinner(msg) {
   const resultBoardTitle = document.querySelector('.result-board-title');
   resultBoardTitle.appendChild(announcement);
   resetBtn.disabled = false;
+  btns.forEach((btn) => btn.disabled = true);
 }
 
 const resetBtn = document.querySelector('.reset');
@@ -101,6 +102,7 @@ function resetScore() {
     ul.removeChild(ul.firstElementChild);
   }
   resetBtn.disabled = true;
+  btns.forEach((btn) => btn.disabled = false);
 }
 
 function removeAnnouncement() {
