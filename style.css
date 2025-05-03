@@ -1,0 +1,15 @@
+ul {
+  margin: 0;
+  padding: 0;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+  width: 300px;
+  height: 100px;
+  overflow: hidden;
+  overflow-y:scroll;
+}
+
+li {
+  list-style: none;
+}
