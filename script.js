@@ -53,6 +53,7 @@ function playRound(humanChoice, computerChoice) {
       checkScore();
     }
   }
+  printScore();
 }
 
 const btns = document.querySelectorAll('button');
@@ -68,6 +69,11 @@ function checkScore() {
   } else if (computerScore === 5) {
     announceWinner('Computer Wins!');
   }
+}
+
+function printScore() {
+  const scoreBoardDiv = document.querySelector('.score-board');
+  scoreBoardDiv.textContent = `${humanScore} : ${computerScore}`;
 }
 
 function announceWinner(msg) {
